@@ -1,0 +1,21 @@
+.main {
+  background-color: whitesmoke;
+  margin: 0;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+}
+
+.btn {
+  &--green {
+    color: $green;
+  }
+  &--red {
+    color: $red;
+  }
+}
+.sign {
+  &:hover {
+    background-color: transparent;
+    color: #28a971;
+  }
+}

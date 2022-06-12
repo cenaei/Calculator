@@ -17,7 +17,7 @@ body {
   bottom: 0px;
   width: 100vw;
   height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Kdam Thmor Pro', sans-serif;
   background-color: $background;
 }
 
@@ -48,49 +48,19 @@ textarea {
 // }
 
 button {
-  margin-left: 1rem;
-  padding: 1rem 2rem;
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  padding: 1rem;
   border: none;
-  border-radius: 1.3rem;
-  font: {
-    size: 1.4rem;
-    weight: 400;
-  }
+  border-radius: 2rem;
+  @include font(2.5rem, 300);
   &:hover {
     cursor: pointer;
+    background-color: #ddabab;
   }
-  background-color: white;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  align-self: flex-start;
-  font-family: 'Roboto', sans-serif;
-  color: black;
-  margin: 1.3rem 0 1.3rem .3rem;
-}
-
-h1 {
-  @include font(3.2rem, 500);
-}
-
-h2 {
-  @include font(2.2rem, 400);
-}
-
-h3 {
-  @include font(1.8rem, 400);
 }
 
 a {
   text-decoration: none;
   color: black;
-}
-
-p {
-  @include font(1.4rem, 300);
 }

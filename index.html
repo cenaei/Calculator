@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <title>Calculator</title>
-</head>
-<body>
-  <header class="header">
-    <input type="text" name="input" id="input" value="">
-    <input type="text" name="output" id="output" value="">
-  </header>
-  <main class="main">
-    <button class="btn--green" onclick="c()">C</button>
-    <button class="btn--green" onclick="ne()">+/-</button>
-    <button class="btn--green" onclick="add(this.value)" value="%">%</button>
-    <button class="btn--red" onclick="add(this.value)" value="/">÷</button>
-    <button class="numbers" onclick="add(this.value)" value="7">7</button>
-    <button class="numbers" onclick="add(this.value)" value="8">8</button>
-    <button class="numbers" onclick="add(this.value)" value="9">9</button>
-    <button class="btn--red" onclick="add(this.value)" value="*">×</button>
-    <button class="numbers" onclick="add(this.value)" value="4">4</button>
-    <button class="numbers" onclick="add(this.value)" value="5">5</button>
-    <button class="numbers" onclick="add(this.value)" value="6">6</button>
-    <button class="btn--red" onclick="add(this.value)" value="-">-</button>
-    <button class="numbers" onclick="add(this.value)" value="1">1</button>
-    <button class="numbers" onclick="add(this.value)" value="2">2</button>
-    <button class="numbers" onclick="add(this.value)" value="3">3</button>
-    <button class="btn--red" onclick="add(this.value)" value="+">+</button>
-    <button></button>
-    <button class="numbers" onclick="add(this.value)" value="0">0</button>
-    <button class="numbers" onclick="add(this.value)" value=".">.</button>
-    <button class="btn--red" onclick="calc(this.value)" value="=">=</button>
-  </main>
-
-  <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <section class="section">
+      <header class="header">
+        <input type="text" name="output" id="output" class="output" value="1" disabled/>
+        <input type="text" name="input" id="input" class="input" value="0" disabled/>
+      </header>
+      <main class="main">
+        <button class="btn--green" onclick="c()">C</button>
+        <button class="btn--green" onclick="ne()">+/-</button>
+        <button class="btn--green" onclick="add(this.value)" value="%">
+          %
+        </button>
+        <button class="btn--red" onclick="add(this.value)" value="/">÷</button>
+        <button class="numbers" onclick="add(this.value)" value="7">7</button>
+        <button class="numbers" onclick="add(this.value)" value="8">8</button>
+        <button class="numbers" onclick="add(this.value)" value="9">9</button>
+        <button class="btn--red" onclick="add(this.value)" value="*">×</button>
+        <button class="numbers" onclick="add(this.value)" value="4">4</button>
+        <button class="numbers" onclick="add(this.value)" value="5">5</button>
+        <button class="numbers" onclick="add(this.value)" value="6">6</button>
+        <button class="btn--red" onclick="add(this.value)" value="-">-</button>
+        <button class="numbers" onclick="add(this.value)" value="1">1</button>
+        <button class="numbers" onclick="add(this.value)" value="2">2</button>
+        <button class="numbers" onclick="add(this.value)" value="3">3</button>
+        <button class="btn--red" onclick="add(this.value)" value="+">+</button>
+        <button class="sign" disabled>by Sina</button>
+        <button class="numbers" onclick="add(this.value)" value="0">0</button>
+        <button class="numbers" onclick="point()" value=".">.</button>
+        <button class="btn--red" onclick="calc(this.value)" value="=">=</button>
+      </main>
+    </section>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -1,0 +1,23 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  max-height: 20%;
+
+  margin-bottom: 2rem;
+
+  .input {
+    text-align: right;
+    padding: 3rem 5rem;
+    // background-color: #ffd8d8;
+    // color: ;
+  }
+  .output {
+    @extend .input;
+    // padding: 1.5rem 1.5rem;
+    // background-color: #c5fff5;
+  }
+}
