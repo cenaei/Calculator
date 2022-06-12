@@ -91,9 +91,21 @@ a {
   margin-bottom: 2rem;
 }
 
-.header .input, .header .output {
+.header .current-operand {
+  font-size: 3.5rem;
+  font-weight: 300;
   text-align: right;
-  padding: 3rem 5rem;
+  padding: 3rem 5rem 1rem;
+  color: #2e2e2e;
+  height: 10rem;
+}
+
+.header .previous-operand {
+  font-size: 2.3rem;
+  font-weight: 300;
+  text-align: right;
+  padding: 1rem 5rem 0;
+  color: #737373;
 }
 
 .main {

@@ -11,32 +11,30 @@
   <body>
     <section class="section">
       <header class="header">
-        <input type="text" name="output" id="output" class="output" value="1" disabled/>
-        <input type="text" name="input" id="input" class="input" value="0" disabled/>
+        <div data-previous-operand class="previous-operand">0</div>
+        <div data-current-operand class="current-operand">0</div>
       </header>
       <main class="main">
-        <button class="btn--green" onclick="c()">C</button>
-        <button class="btn--green" onclick="ne()">+/-</button>
-        <button class="btn--green" onclick="add(this.value)" value="%">
-          %
-        </button>
-        <button class="btn--red" onclick="add(this.value)" value="/">÷</button>
-        <button class="numbers" onclick="add(this.value)" value="7">7</button>
-        <button class="numbers" onclick="add(this.value)" value="8">8</button>
-        <button class="numbers" onclick="add(this.value)" value="9">9</button>
-        <button class="btn--red" onclick="add(this.value)" value="*">×</button>
-        <button class="numbers" onclick="add(this.value)" value="4">4</button>
-        <button class="numbers" onclick="add(this.value)" value="5">5</button>
-        <button class="numbers" onclick="add(this.value)" value="6">6</button>
-        <button class="btn--red" onclick="add(this.value)" value="-">-</button>
-        <button class="numbers" onclick="add(this.value)" value="1">1</button>
-        <button class="numbers" onclick="add(this.value)" value="2">2</button>
-        <button class="numbers" onclick="add(this.value)" value="3">3</button>
-        <button class="btn--red" onclick="add(this.value)" value="+">+</button>
+        <button class="btn--green" data-all-clear>C</button>
+        <button class="btn--green" data-sym>+/-</button>
+        <button class="btn--green" data-operation>%</button>
+        <button class="btn--red" data-operation>÷</button>
+        <button class="numbers" data-number>7</button>
+        <button class="numbers" data-number>8</button>
+        <button class="numbers" data-number>9</button>
+        <button class="btn--red" data-operation>×</button>
+        <button class="numbers" data-number>4</button>
+        <button class="numbers" data-number>5</button>
+        <button class="numbers" data-number>6</button>
+        <button class="btn--red" data-operation>-</button>
+        <button class="numbers" data-number>1</button>
+        <button class="numbers" data-number>2</button>
+        <button class="numbers" data-number>3</button>
+        <button class="btn--red" data-operation>+</button>
         <button class="sign" disabled>by Sina</button>
-        <button class="numbers" onclick="add(this.value)" value="0">0</button>
-        <button class="numbers" onclick="point()" value=".">.</button>
-        <button class="btn--red" onclick="calc(this.value)" value="=">=</button>
+        <button class="numbers" data-number>0</button>
+        <button class="numbers" data-number >.</button>
+        <button class="btn--red" data-equals>=</button>
       </main>
     </section>
     <script src="app.js"></script>
