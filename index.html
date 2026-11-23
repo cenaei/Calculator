@@ -4,38 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="A simple calculator built with HTML, SASS and JavaScript." />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Calculator</title>
   </head>
   <body>
-    <section class="section">
+    <section class="section" aria-label="Calculator">
       <header class="header">
-        <div data-previous-operand class="previous-operand">0</div>
-        <div data-current-operand class="current-operand">0</div>
+        <div data-previous-operand class="previous-operand" aria-hidden="true"></div>
+        <div data-current-operand class="current-operand" role="status" aria-live="polite">0</div>
       </header>
       <main class="main">
-        <button class="btn--green" data-all-clear>C</button>
-        <button class="btn--green" data-sym>+/-</button>
-        <button class="btn--green" data-operation>%</button>
-        <button class="btn--red" data-operation>÷</button>
+        <button class="btn--green" data-all-clear aria-label="Clear all">C</button>
+        <button class="btn--green" data-sym aria-label="Toggle sign">±</button>
+        <button class="btn--green" data-operation aria-label="Percent">%</button>
+        <button class="btn--red" data-operation aria-label="Divide">÷</button>
+
         <button class="numbers" data-number>7</button>
         <button class="numbers" data-number>8</button>
         <button class="numbers" data-number>9</button>
-        <button class="btn--red" data-operation>×</button>
+        <button class="btn--red" data-operation aria-label="Multiply">×</button>
+
         <button class="numbers" data-number>4</button>
         <button class="numbers" data-number>5</button>
         <button class="numbers" data-number>6</button>
-        <button class="btn--red" data-operation>-</button>
+        <button class="btn--red" data-operation aria-label="Subtract">-</button>
+
         <button class="numbers" data-number>1</button>
         <button class="numbers" data-number>2</button>
         <button class="numbers" data-number>3</button>
-        <button class="btn--red" data-operation>+</button>
-        <button class="sign" disabled>by Sina</button>
+        <button class="btn--red" data-operation aria-label="Add">+</button>
+
         <button class="numbers" data-number>0</button>
-        <button class="numbers" data-number >.</button>
-        <button class="btn--red" data-equals>=</button>
+        <button class="numbers" data-number aria-label="Decimal point">.</button>
+        <button class="btn--green" data-delete aria-label="Delete last digit">⌫</button>
+        <button class="btn--red" data-equals aria-label="Equals">=</button>
       </main>
+      <p class="sign">by Sina</p>
     </section>
     <script src="app.js"></script>
   </body>

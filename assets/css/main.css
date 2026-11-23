@@ -1,27 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+@charset "UTF-8";
+/* Hallmark · v2.0.0 · redesign: full · scope: app · genre: modern-minimal · theme: custom (warm neutral surfaces, one teal accent, tabular numerals) · critique: an instrument panel, not a phone; the display and the keypad carry it, nothing decorates them */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font: inherit;
-  font-size: 1.8rem;
-  font-weight: 300;
 }
 
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-body {
-  position: absolute;
-  overflow: hidden;
-  top: 0px;
-  bottom: 0px;
-  width: 100vw;
-  height: 100vh;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  background-color: #fff;
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
 }
 
 ol,
@@ -29,102 +27,198 @@ ul {
   list-style: none;
 }
 
-input,
-textarea {
-  background-color: transparent;
-  border-style: none;
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
-  outline: none;
-}
-
-button {
-  background-color: transparent;
-  aspect-ratio: 1/1;
-  padding: 1rem;
-  border: none;
-  border-radius: 2rem;
-  font-size: 2.5rem;
-  font-weight: 300;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: #ddabab;
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #e8e6e1;
+  --surface: #f9f8f5;
+  --surface-2: #f0eee9;
+  --surface-3: #e6e3dd;
+  --ink: #191817;
+  --ink-muted: #6b675f;
+  --line: #d7d3cb;
+  --accent: #0f6b57;
+  --accent-strong: #0b5647;
+  --accent-ink: #f7fffc;
+  --accent-soft: #dcece6;
+  --accent-soft-2: #cbe3db;
+  --font-ui: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+  --font-num: ui-monospace, SF Mono, Cascadia Mono, Roboto Mono, Menlo, Consolas, monospace;
+  --radius-card: 28px;
+  --radius-key: 16px;
+  --shadow-card: 0 1px 2px rgba(25, 24, 23, 0.05), 0 18px 40px -18px rgba(25, 24, 23, 0.35);
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111318;
+    --surface: #1a1d23;
+    --surface-2: #23272f;
+    --surface-3: #2b303a;
+    --ink: #f1f0ec;
+    --ink-muted: #a2a0a9;
+    --line: #32363f;
+    --accent: #5ecfae;
+    --accent-strong: #7fdcbf;
+    --accent-ink: #08130f;
+    --accent-soft: #1e3a33;
+    --accent-soft-2: #26483f;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+  }
+}
+html,
+body {
+  overflow-x: clip;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
 .section {
-  max-width: 42.8rem;
-  height: 100vh;
-  margin: 0 auto;
-  padding-top: 3rem;
-  border: 1px solid #000;
-  border-radius: 5rem;
+  width: min(100%, 23rem);
+  padding: 1.25rem 1.25rem 0.9rem;
+  background-color: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
 }
 
-.main {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (1fr)[5];
-      grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
-
 .header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  max-height: 20%;
-  margin-bottom: 2rem;
-}
-
-.header .current-operand {
-  font-size: 3.5rem;
-  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  min-height: 7rem;
+  padding: 0.5rem 0.35rem 1.4rem;
   text-align: right;
-  padding: 3rem 5rem 1rem;
-  color: #2e2e2e;
-  height: 10rem;
 }
-
 .header .previous-operand {
-  font-size: 2.3rem;
-  font-weight: 300;
-  text-align: right;
-  padding: 1rem 5rem 0;
-  color: #737373;
+  font-family: var(--font-num);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  min-height: 1.3em;
+  overflow-wrap: anywhere;
+}
+.header .current-operand {
+  font-family: var(--font-num);
+  font-size: clamp(2rem, 9vw, 2.75rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.header .current-operand.is-long {
+  font-size: clamp(1.35rem, 6vw, 1.85rem);
 }
 
 .main {
-  background-color: whitesmoke;
-  margin: 0;
-  border-top-left-radius: 5rem;
-  border-top-right-radius: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+button {
+  min-height: 3.4rem;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-key);
+  font-family: var(--font-ui);
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s var(--ease), border-color 0.15s var(--ease), transform 0.12s var(--ease);
+}
+button:active {
+  transform: translateY(1px);
+}
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.numbers {
+  background-color: var(--surface-2);
+  border-color: var(--line);
+  color: var(--ink);
+  font-family: var(--font-num);
+  font-size: 1.3rem;
+}
+.numbers:hover {
+  background-color: var(--surface-3);
 }
 
 .btn--green {
-  color: green;
-}
-
-.btn--red {
-  color: red;
-}
-
-.sign:hover {
   background-color: transparent;
-  color: #28a971;
+  color: var(--ink-muted);
+  font-size: 1rem;
 }
+.btn--green:hover {
+  background-color: var(--surface-2);
+  color: var(--ink);
+}
+.btn--red {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+.btn--red:hover {
+  background-color: var(--accent-soft-2);
+}
+
+[data-equals] {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+[data-equals]:hover {
+  background-color: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.sign {
+  margin-top: 0.9rem;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+}
+
 /*# sourceMappingURL=main.css.map */

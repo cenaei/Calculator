@@ -1,3 +1,8 @@
-$background: #fff;
-$green: green;  
-$red: red;
+// Design tokens live as CSS custom properties in base/_base.scss.
+// These Sass variables exist for one-off calculations inside partials.
+$background: #e8e6e1;
+$surface: #f9f8f5;
+$ink: #191817;
+$muted: #6b675f;
+$line: #d7d3cb;
+$accent: #0f6b57;
