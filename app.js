@@ -165,6 +165,11 @@ const historyList = document.querySelector('[data-history-list]')
 const clearHistoryBtn = document.querySelector('[data-clear-history]')
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+if (typeof window !== 'undefined') {
+  window.calculator = calculator
+  window.updateOperatorHighlights = updateOperatorHighlights
+  window.renderHistory = renderHistory
+}
 
 function updateOperatorHighlights() {
   operationButtons.forEach(btn => {
