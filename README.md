@@ -35,7 +35,7 @@
   <tr>
     <td width="50%">
       <h3 align="center">🌙 Dark Mode</h3>
-      <img src="Screenshot.png" alt="Dark Mode with History" width="100%">
+      <img src="screenshot-dark.png" alt="Dark Mode with History" width="100%">
     </td>
     <td width="50%">
       <h3 align="center">☀️ Light Mode</h3>
